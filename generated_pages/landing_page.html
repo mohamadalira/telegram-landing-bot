@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اولين تست | صفحه رسمی</title>
+    <style>
+        :root {
+            --primary: #4646ff;
+            --secondary: #39ebf9;
+            --accent: #eb2edd;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            color: #1a1a1a;
+            background: #f5f5f7;
+            line-height: 1.6;
+        }
+        .professional-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 120px 40px;
+            text-align: center;
+        }
+        .professional-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .professional-card {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-right: 6px solid var(--accent);
+        }
+        .professional-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 30px auto;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 8px solid white;
+        }
+        .professional-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .professional-text {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        .color-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .color-card {
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .professional-footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        @media (max-width: 768px) {
+            .professional-title { font-size: 2rem; }
+            .color-showcase { grid-template-columns: 1fr; }
+            .professional-card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="professional-header">
+        <h1 class="professional-title">اولين تست</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+            ارائه خدمات حرفه‌ای و با کیفیت
+        </p>
+    </header>
+    
+    <main class="professional-container">
+        <div class="professional-card">
+            <img src="HooshaAI_2025_12_01_202246.png" class="professional-img" alt="اولين تست">
+            
+            <div class="professional-text">
+                اين يک صفحه است که ربات ساخته
+ميتوني توام بسازي
+کافيه تماس بگيري
+09392120483
+            </div>
+            
+            <div class="color-showcase">
+                <div class="color-card" style="background-color: var(--primary);">
+                    <h3>رنگ اصلی</h3>
+                    <p>برای برند و هویت بصری</p>
+                </div>
+                <div class="color-card" style="background-color: var(--secondary);">
+                    <h3>رنگ ثانویه</h3>
+                    <p>برای المان‌های تکمیلی</p>
+                </div>
+                <div class="color-card" style="background-color: var(--accent);">
+                    <h3>رنگ تأکیدی</h3>
+                    <p>برای دکمه‌ها و CTA</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="professional-footer">
+        <p>© 2025 اولين تست. تمامی حقوق محفوظ است.</p>
+        <p style="margin-top: 10px; opacity: 0.8; font-size: 0.9rem;">
+            این صفحه به صورت حرفه‌ای طراحی و تولید شده است
+        </p>
+    </footer>
+</body>
+</html>

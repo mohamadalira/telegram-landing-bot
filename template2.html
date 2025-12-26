@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{نام}} | پورتفولیو</title>
+    <style>
+        :root {
+            --color1: {{رنگ_اول}};
+            --color2: {{رنگ_دوم}};
+            --color3: {{رنگ_سوم}};
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazir', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(45deg, 
+                color-mix(in srgb, var(--color1) 20%, transparent 80%),
+                color-mix(in srgb, var(--color2) 20%, transparent 80%),
+                color-mix(in srgb, var(--color3) 20%, transparent 80%)
+            );
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, var(--color1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, var(--color2) 0%, transparent 40%),
+                radial-gradient(circle at 40% 80%, var(--color3) 0%, transparent 40%);
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+            gap: 40px;
+            padding: 40px;
+        }
+        
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.3);
+            max-width: 500px;
+        }
+        
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid;
+            border-image: linear-gradient(45deg, var(--color1), var(--color2), var(--color3)) 1;
+            margin-bottom: 30px;
+            transition: transform 0.5s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+        
+        .name {
+            font-size: 3rem;
+            background: linear-gradient(45deg, var(--color1), var(--color2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .content-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px;
+            height: fit-content;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.1),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #444;
+            position: relative;
+            padding: 30px;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 8rem;
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: var(--color1);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+        
+        .color-strip {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        
+        .color-item {
+            flex: 1;
+            height: 80px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .color-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .color-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.1));
+        }
+        
+        .color-label {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .content-box {
+                padding: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .color-strip {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/font-face.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="left-panel">
+            <div class="profile-card">
+                <img src="{{آدرس_عکس}}" alt="{{نام}}" class="profile-image">
+                <h1 class="name">{{نام}}</h1>
+                <p class="tagline">طراحی شده با عشق و خلاقیت</p>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="content-box">
+                <div class="quote">
+                    {{متن_اصلی}}
+                </div>
+                
+                <div class="color-strip">
+                    <div class="color-item" style="background-color: var(--color1)">
+                        <span class="color-label">رنگ اول</span>
+                    </div>
+                    <div class="color-item" style="background-color: var(--color2)">
+                        <span class="color-label">رنگ دوم</span>
+                    </div>
+                    <div class="color-item" style="background-color: var(--color3)">
+                        <span class="color-label">رنگ سوم</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
